@@ -1,33 +1,179 @@
-*{
-    font-family: Orbitron, Arial, Helvetica, sans-serif;
+/* Define um estilo global para todos os elementos */
+* {
+  font-family: Orbitron, Arial, Helvetica, sans-serif;
+  box-sizing: border-box; /* Adiciona o box-sizing para um melhor controle de layout */
 }
+
+/* Estilos gerais para o corpo da página */
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f0f0f0;
-    
-  }
-  
-  h1 {
-    color: #333;
-    text-align: center;
-  }
+  margin: 0;
+  padding: 0;
+  background: #1e1e1e; /* Fundo escuro para toda a página */
+  color: #dcdcdc; /* Cor do texto clara para contraste */
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Garante que o rodapé esteja no final da página */
+}
 
-  body {
-    font-family: Arial, sans-serif;
-    margin: 50;
-    padding: 50;
-    background-image: url('images/ia.png'); /* Caminho para a imagem de fundo */
-    background-size: cover; /* Ajusta a imagem para cobrir todo o fundo */
-    background-position: center; /* Centraliza a imagem */
-    background-repeat: no-repeat; /* Evita que a imagem se repita */
-  }
-  
-  h1 {
-    color: #ededed; /* Ajuste a cor do texto para melhor contraste com a imagem de fundo */
-    text-align: center;
-    padding: 20px;
-  }
+/* Estilo para o cabeçalho (h1) */
+h1 {
+  color: #00bcd4; /* Cor do texto em tom de azul claro */
+  text-align: center;
+  padding: 20px;
+  margin: 0; /* Remove a margem padrão para alinhar melhor com o layout */
+  font-size: 2.5em; /* Ajusta o tamanho da fonte para um impacto maior */
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.7); /* Adiciona sombra ao texto para profundidade */
+}
 
-  
+/* Estilos para a interface de chat */
+.chat-container {
+  width: 90%;
+  max-width: 1200px; /* Ajuste o tamanho máximo para um design mais flexível */
+  background: #2b2b2b; /* Fundo escuro para o container de chat */
+  border-radius: 12px; /* Bordas arredondadas para um visual mais moderno */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.8); /* Sombra mais intensa */
+  overflow: hidden;
+  margin: 20px auto; /* Centraliza o container horizontalmente com margem superior e inferior */
+  border: 1px solid #00bcd4; /* Adiciona uma borda sutil em azul claro */
+  position: relative; /* Necessário para o efeito de flutuação */
+  animation: float 3s ease-in-out infinite; /* Adiciona a animação de flutuação */
+}
+
+/* Animação de flutuação */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Cabeçalho da interface de chat */
+.header {
+  background: #333; /* Fundo escuro para o cabeçalho */
+  color: #00bcd4; /* Cor do texto em azul claro */
+  padding: 16px;
+  text-align: center;
+  border-bottom: 1px solid #00bcd4; /* Linha de divisão para um efeito tecnológico */
+}
+
+/* Caixa de chat */
+.chat-box {
+  display: flex;
+  flex-direction: column;
+  height: 400px;
+}
+
+/* Área de mensagens */
+.messages {
+  flex: 1;
+  padding: 16px;
+  overflow-y: auto;
+  border-bottom: 1px solid #444; /* Borda sutil entre mensagens */
+  background: #1e1e1e; /* Fundo escuro para a área de mensagens */
+  display: flex;
+  flex-direction: column;
+}
+
+/* Área de entrada de mensagem */
+.input-area {
+  display: flex;
+  padding: 8px;
+  border-top: 1px solid #444; /* Borda superior sutil */
+  background: #2b2b2b; /* Fundo escuro e levemente transparente */
+}
+
+/* Estilo do campo de entrada */
+.input-area input {
+  flex: 1;
+  padding: 12px;
+  border: none; /* Remove a borda do campo de entrada */
+  border-radius: 6px; /* Bordas arredondadas mais sutis */
+  margin-right: 8px;
+  background: #333; /* Fundo escuro para o campo de entrada */
+  color: #fff; /* Cor do texto branca para contraste */
+}
+
+/* Estilo do botão de envio */
+.input-area button {
+  padding: 12px 24px;
+  border: none;
+  background: linear-gradient(135deg, #00bcd4, #00796b); /* Gradiente de fundo em azul claro e verde escuro */
+  color: #fff;
+  border-radius: 6px; /* Bordas arredondadas mais sutis */
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s; /* Efeito de transição suave */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5); /* Sombra leve para o botão */
+}
+
+.input-area button:hover {
+  background: linear-gradient(135deg, #00796b, #00bcd4); /* Inverte o gradiente ao passar o mouse */
+  transform: scale(1.05); /* Efeito de aumento ao passar o mouse */
+}
+
+/* Estilo para as mensagens individuais */
+.message {
+  margin: 10px 0;
+  padding: 10px;
+  border-radius: 8px;
+  background-color: #333; /* Fundo escuro para mensagens */
+  color: #fff;
+  max-width: 70%; /* Limita a largura das mensagens */
+  position: relative;
+  word-wrap: break-word; /* Quebra de linha automática */
+}
+
+/* Estilo para mensagens enviadas */
+.message.sender {
+  align-self: flex-start; /* Alinha à esquerda */
+}
+
+/* Estilo para mensagens recebidas */
+.message.receiver {
+  align-self: flex-end; /* Alinha à direita */
+  background-color: #81a7ac; /* Fundo azul para mensagens recebidas */
+}
+
+/* Cabeçalho da mensagem (nome e hora) */
+.message-header {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.8em;
+  color: #bbb;
+}
+
+/* Nome do remetente */
+.sender-name {
+  font-weight: bold;
+}
+
+/* Nome do destinatário */
+.receiver-name {
+  font-weight: bold;
+}
+
+/* Hora da mensagem */
+.message-time {
+  color: #888;
+}
+
+/* Corpo da mensagem */
+.message-body {
+  margin-top: 5px;
+}
+
+/* Estilos para o rodapé */
+footer {
+  text-align: center; /* Centraliza o texto no rodapé */
+  padding: 20px; /* Adiciona espaçamento interno */
+  background-color: #2b2b2b; /* Fundo escuro para o rodapé */
+  color: #dcdcdc; /* Cor do texto clara */
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}
+
+main {
+  flex: 1; /* Faz o conteúdo principal expandir para preencher o espaço disponível */
+}

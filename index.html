@@ -5,11 +5,56 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>IA ADVENTURE</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Sora:wght@100..800&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Sora:wght@100..800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>IA ADVENTURE</h1>
+  <header>
+    <h1>IA ADVENTURE</h1>
+  </header>
+  
+  <main>
+    <section class="chat-container">
+      <div class="header">
+        <h2>Bem-vindo ao Jogo</h2>
+      </div>
+      <div class="chat-box">
+        <div class="messages" aria-live="polite">
+          <div class="message sender">
+            <div class="message-header">
+              <span class="sender-name">IA Adventure</span>
+              <span class="message-time">12:34</span>
+            </div>
+            <div class="message-body">
+Você está em um escritório, cercado por computadores e equipamentos tecnológicos. O monitor principal exibe uma mensagem de erro, mas a IA que você criou está ativa e funciona perfeitamente
+
+            </div>
+          </div>
+          <div class="message receiver">
+            <div class="message-header">
+              <span class="receiver-name">Você</span>
+              <span class="message-time">00:00</span>
+            </div>
+            <div class="message-body">
+              <h4>1. Olhar ao redor</h4>
+              <h4>2. Examinar o monitor principal</h4>
+              <h4>3. Falar com a IA</h4>
+            </div>
+          </div>
+        </div>
+        <div class="input-area">
+          <input type="text" id="messageInput" placeholder="Digite sua mensagem..." aria-label="Campo de mensagem">
+          <button id="sendButton" aria-label="Enviar mensagem">Enviar</button>
+        </div>
+      </div>
+    </section>
+  </main>
+  
+  <footer>
+    <p>&copy; 2024 IA ADVENTURE. Todos os direitos reservados.</p>
+  </footer>
+  
+  <script src="script.js"></script>
 </body>
 </html>
