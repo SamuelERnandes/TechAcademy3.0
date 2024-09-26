@@ -6,6 +6,7 @@ public class Cena {
     private Integer idCena;
     private String descricao;
     private List<Item> itens;
+    private Integer proximaCena;
 
     public Integer getIdCena() {
         return idCena;
@@ -37,5 +38,13 @@ public class Cena {
                 "idCena=" + idCena +
                 ", descricao='" + descricao + '\'' +
                 '}';
+    }
+
+    public Integer getProximaCena() {
+        return proximaCena;
+    }
+
+    public void setProximaCena(Integer proximaCena) {
+        this.proximaCena = proximaCena;
     }
 }

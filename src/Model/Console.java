@@ -4,6 +4,7 @@ public class Console {
     private String mensagem;
     private Integer idSave;
 
+
     public String getMensagem() {
         return mensagem;
     }
